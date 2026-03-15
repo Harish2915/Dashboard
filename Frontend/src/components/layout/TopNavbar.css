@@ -1,0 +1,198 @@
+/* ────────────────────────────────────────────────
+   TOPNAV
+   left = sidebar-width + sidebar-gap so there's
+   visible breathing room between sidebar and navbar
+──────────────────────────────────────────────── */
+.topnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: calc(var(--sidebar-width) + var(--sidebar-gap));
+  height: var(--topnav-height);
+  background: white;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 90;
+  transition: left 0.25s ease;
+
+  /* curved bottom-left and bottom-right corners */
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Sidebar collapsed → icon-only (64px) */
+.topnav.sidebar-collapsed {
+  left: calc(var(--sidebar-mini) + var(--sidebar-gap));
+}
+
+/* Mobile: full-width, no gap */
+@media (max-width: 767px) {
+  .topnav {
+    left: 0 !important;
+    padding: 0 16px;
+    border-radius: 0;
+  }
+}
+
+/* ── Left group ───────────────────────────────── */
+.topnav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Hamburger — mobile only */
+.mobile-menu-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* ── Breadcrumb ───────────────────────────────── */
+.topnav-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.bc-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.bc-sep {
+  color: var(--text-muted);
+}
+
+.bc-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.bc-link {
+  background: none;
+  border: none;
+  padding: 3px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+
+.bc-link:hover {
+  color: var(--primary-dark);
+  background: var(--primary-light);
+}
+
+.bc-current {
+  color: var(--text);
+  font-weight: 600;
+  padding: 3px 5px;
+}
+
+/* Very small screens: show only last crumb */
+@media (max-width: 400px) {
+  .bc-wrap:not(:last-child) {
+    display: none;
+  }
+}
+
+/* ── Right group ──────────────────────────────── */
+.topnav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* User pill */
+.topnav-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 5px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: white;
+}
+
+.topnav-user:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.topnav-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.topnav-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.topnav-user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.topnav-user-role {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .topnav-user-info {
+    display: none;
+  }
+
+  .topnav-user {
+    padding: 5px;
+  }
+}
