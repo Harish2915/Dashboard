@@ -6,8 +6,44 @@ A full-stack analytics dashboard built with **React + FastAPI + MySQL**. Add wid
 
 ## Screenshots
 
-> Dashboard view with KPI cards, charts, and data table  
-> Configure view with drag-and-drop widget placement
+### Dashboard Demo
+
+Demonstrates the **interactive features of the Halleyx Dashboard**, including widget drag-and-drop, resizing, analytics charts, and customer order management.
+
+![Dashboard](Screenshots/dashboard.png)
+![Dashboard](Screenshots/dashboard1.png)
+---
+
+### Customer Orders Management
+Create, update, delete, and filter customer orders.
+
+![Orders](Screenshots/orders.png)
+---
+
+### Configure Dashboard
+Place widgets anywhere and resize them freely.
+
+![Configure](Screenshots/configure.png)
+![Configure](Screenshots/config1.png)
+
+---
+
+### Full Application Demo (Desktop View)
+
+Shows the **complete dashboard workflow on desktop**, including widget configuration, analytics charts, and order management.
+
+▶ **Watch the desktop demo video:**  
+[Full Application Demo](Demo/Full_Screen.mp4)
+
+---
+
+### Mobile Responsive Demo
+
+Shows how the **dashboard adapts to mobile screens**, with responsive layout and widgets stacked for smaller devices.
+
+▶ **Watch the mobile demo video:**  
+[Mobile Responsive Demo](Demo/Mobile_Screen.mp4)
+
 
 ---
 
@@ -112,8 +148,8 @@ halleyx-dashboard/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/halleyx-dashboard.git
-cd halleyx-dashboard
+git clone https://github.com/Harish2915/Dashboard.git
+cd Dashboard
 ```
 
 ---
